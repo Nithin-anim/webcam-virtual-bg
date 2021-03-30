@@ -15,7 +15,7 @@ getAccessBtn.addEventListener('click', () => {
             videoEle.play();
             initBodyPix();
             videoEle.addEventListener('loadedmetadata', () => {
-                startSegmentation();
+                initBodyPix();
             })
         });
 })
@@ -29,6 +29,7 @@ const initBodyPix = () => {
     })
         .then(netObject => {
             net = netObject;
+            startSegmentation();
         })
         .catch(err => {
             console.log('Error', err);
@@ -51,8 +52,8 @@ const drawPerson = (personSegmentation) => {
 const startSegmentation = () => {
     net.segmentPerson(videoEle, {
         flipHorizontal: true,
-        internalResolution: 'medium',
-        segmentationThreshold: 0.5
+        internalResolution: 'full',
+        segmentationThreshold: 0.7
     })
         .then(segmentationData => {
             // console.log("Segmentation Data", segmentationData);
