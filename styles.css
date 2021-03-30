@@ -1,0 +1,25 @@
+#background{
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    background-image: url(bg.jpeg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: transparent;
+    position: absolute;
+    top: 50%;
+    bottom: 0;
+    left: 0%;
+    right: 0;
+}
+
+#segmented-feed{
+ background-color: transparent;
+ position: absolute;
+ z-index: 9999;
+ top: 50%;
+ bottom: 0;
+ left: 0%;
+ right: 0;
+}
